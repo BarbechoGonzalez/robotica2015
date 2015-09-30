@@ -33,12 +33,13 @@
 
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
-
+const double EulerC=std::exp(1.0);
 class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
 bool giro;
 float rot;
+
 public:
 	SpecificWorker(MapPrx& mprx);	
 	~SpecificWorker();
