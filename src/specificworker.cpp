@@ -24,6 +24,7 @@
 SpecificWorker::SpecificWorker(MapPrx& mprx) : GenericWorker(mprx)
 {
   giro=false;
+  derecha=true;
   rot=1.2;
 }
 
@@ -46,51 +47,68 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 	return true;
 }
 
-int getvelocidadl(float distmin,int velomax, float dist){
+int SpecificWorker::getvelocidadl(float distmin,int velomax, float dist){
   	if(dist<distmin){
-// 	  std::cout << velomax*tanh(dist/distmin) << std::endl;
 	      return velomax*tanh(dist/distmin);
 	}
 	else
 	      return velomax;
 }
-float getvelocidadg(float velmaxg, float anglemax, float angle){
-	if(angle<anglemax&& angle>(-anglemax)){
-	      float aux=M_PI*angle*angle/2;
-	      std::cout <<  velmaxg*(pow(EulerC,-(aux))) << std::endl;
-	      return velmaxg*(pow(EulerC,-(aux)));
-	}
-	else return 0;
-	
+float SpecificWorker::getvelocidadg(float velmaxg, float angle, int dismax, int dis){
+	if(dis<dismax)
+	{
+	    float resul;
+	    float aux=M_PI*angle*angle;
+	    resul = 1+velmaxg*(pow(EulerC,-(aux)));	      
+	    if (angle>0&&!giro)
+	      resul=-resul;
+	    std::cout<<resul<<std::endl;
+	    return resul;}
+	else {
+	  std::cout<<0<<std::endl;
+	    return 0;}
 }
+int SpecificWorker::getdistmin(int dismax,float angle){
+	float aux=M_PI*angle*angle;
+	return 350+dismax*(pow(EulerC,-(aux)));
+}
+
 void SpecificWorker::compute()
 {
+  
     const float threshold = 400; //millimeters
-    const int velmax=300;	//velocidad maxima del robot
-    const int cota=10;  //cota de vision
-    const float velmaxg=1.2;
-   // const float anglemax=(100-2*cota)*100/180;
-    const float anglemax=0.7854;
-    
+    const int velmax=350;	//velocidad maxima del robot
+    const int cota=16;  //cota de vision
+    const float velmaxg=2.2;
+    const int distsecurity=440;
+    int sentido=M_PI-0.6;
     try
     {
         RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();  //read laser data
-        std::sort( ldata.begin()+cota, ldata.end()-cota, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return (a.dist < b.dist); }) ;  //sort laser data from small to $
-	float distaux=(ldata.data()+cota)->dist;
-	rot=getvelocidadg(velmaxg,anglemax,distaux);
-	if( distaux < threshold&&!giro){
-		differentialrobot_proxy->setSpeedBase(getvelocidadl(threshold,velmax,distaux), rot);
-		giro=true;
-//   		usleep(rand()%(1000000-100000 + 1) + 100000);  //random wait between 1.5s and 0.1sec
-   	}
-	else if(distaux > threshold)
-    	{
-		giro=false;
-        	differentialrobot_proxy->setSpeedBase(getvelocidadl(threshold,velmax,distaux), 0);
-    	}
-    	if(giro){
-		differentialrobot_proxy->setSpeedBase(getvelocidadl(threshold,velmax,distaux), rot);
+	if((ldata.data()+cota)->dist<distsecurity&&((ldata.data())+100-cota)->dist<distsecurity){
+	  differentialrobot_proxy->setSpeedBase(-400, 0); 
+	  usleep(1000000);
+	  RoboCompLaser::TLaserData ldata2 = laser_proxy->getLaserData();  //read laser data
+	  if(ldata2.data()->dist>(ldata2.data()+99)->dist)
+	    sentido=-sentido;
+	  differentialrobot_proxy->setSpeedBase(0, (sentido));
+	  usleep(1000000);
+	  giro=false;
 	}
+	else{
+	      std::sort( ldata.begin()+cota, ldata.end()-cota, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return (a.dist < b.dist); }) ;  //sort laser data from small to $
+	      
+	      float distaux=(ldata.data()+cota)->dist;
+	      float angle=(ldata.data()+cota)->angle;
+	      
+	      int distmax=getdistmin(threshold,angle);
+	      rot=getvelocidadg(velmaxg,angle,distmax,distaux);
+	      int vel=getvelocidadl(distmax,velmax,distaux);
+	      if(rot<0)
+		    giro=false;
+	      differentialrobot_proxy->setSpeedBase(vel, rot);
+	}
+
     }
     catch(const Ice::Exception &ex)
     {

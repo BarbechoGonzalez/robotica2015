@@ -38,18 +38,20 @@ class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
 bool giro;
+bool derecha;
 float rot;
 
 public:
 	SpecificWorker(MapPrx& mprx);	
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
-
-
 public slots:
 	void compute(); 	
 
 private:
+	int getdistmin(int dismax, float angle);
+	int getvelocidadl(float distmin,int velomax, float dist);
+	float getvelocidadg(float velmaxg, float angle, int dismax, int dis);
 	
 };
 
