@@ -1,14 +1,13 @@
-```
-```
-#
-``` controller
-```
-Intro to component here
+
+
+``` robotcontroller ```
+
+
 
 
 ## Configuration parameters
 As any other component,
-``` *controller* ```
+``` *robotcontroller* ```
 needs a configuration file to start. In
 
     etc/config
