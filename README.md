@@ -12,12 +12,10 @@ Juan Antonio García Ramiro
 Victor Gonzalez Breña
 
 This controller is created for Robex, the robot used in robotics subject at UEx.
-
-Created using KDevelop and QT-Designer, using C++.
+Created with Kevelop and QT-Designer, using C++.
 
 
 It've been made using component-oriented programming.
-
 RCIS simulator it's needed in order to use it.
 
 
