@@ -6,14 +6,20 @@
 Made by:
 
 Ivan Barbecho Delgado
+
 Juan Antonio García Ramiro
+
 Victor Gonzalez Breña
 
 This controller is created for Robex, the robot used in robotics subject at UEx.
+
 Created using KDevelop and QT-Designer, using C++.
 
+
 It've been made using component-oriented programming.
+
 RCIS simulator it's needed in order to use it.
+
 
 ## Install guide
 
@@ -56,7 +62,9 @@ After editing the new config file we can run the component:
 When the component is running, you'll see an interface:
 
 In the top left corner you'll see a timer. Under it, there's information about linear and turning speed.
+
 In the bottom left corner there's two buttons: the Start button makes the component work, and the Stop button stops it.
+
 There's a white window too, where Robex route it's painted.
 
 
