@@ -22,58 +22,45 @@
 /**
 * \brief Default constructor
 */
-SpecificWorker::SpecificWorker(MapPrx& mprx) : GenericWorker(mprx)
-{
-  
-  connect(Start, SIGNAL(clicked()), this, SLOT(iniciar()));
-  connect(Stop, SIGNAL(clicked()), this, SLOT(parar()));
-  connect(&clk, SIGNAL(senal()), this, SLOT(reloj()));
-  clk.setseg(1000);
-  scene =  new QGraphicsScene();
-  Grafico->setScene(scene);
-  cont=0;
-  startbutton=false;
-  giro=false;
-  rot=1.2;
-  clk.start();
-
+SpecificWorker::SpecificWorker(MapPrx& mprx) : GenericWorker(mprx){
+	connect(Start, SIGNAL(clicked()), this, SLOT(iniciar()));
+	connect(Stop, SIGNAL(clicked()), this, SLOT(parar()));
+	connect(&clk, SIGNAL(senal()), this, SLOT(reloj()));
+	clk.setseg(1000);
+	scene =  new QGraphicsScene();
+	Grafico->setScene(scene);
+	cont=0;
+	startbutton=false;
+	giro=false;
+	rot=1.2;
+	clk.start();
 }
 
 /**
 * \brief Default destructor
 */
-SpecificWorker::~SpecificWorker()
-{
-	
-}
+SpecificWorker::~SpecificWorker(){}
 
-bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
-{
-
-
-
-	
+bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params){
 	timer.start(Period);
-
 	return true;
 }
 
 int SpecificWorker::getvelocidadl(float distmin,int velomax, float dist){
   	if(dist<distmin){
-	      return velomax*tanh(dist/distmin);
+		return velomax*tanh(dist/distmin);
 	}
 	else
-	      return velomax;
+		return velomax;
 }
 float SpecificWorker::getvelocidadg(float velmaxg, float angle, int dismax, int dis){
-	if(dis<dismax)
-	{
-	    float resul;
-	    float aux=M_PI*angle*angle;
-	    resul = 1+velmaxg*(pow(EulerC,-(aux)));	      
-	    if (angle>0&&!giro)
-	      resul=-resul;
-	    return resul;
+	if(dis<dismax){
+		float resul;
+		float aux=M_PI*angle*angle;
+		resul = 1+velmaxg*(pow(EulerC,-(aux)));	      
+		if (angle>0&&!giro)
+			resul=-resul;
+		return resul;
 	}
 	else return 0;
 }
@@ -84,106 +71,103 @@ int SpecificWorker::getdistmin(int dismax,float angle){
 
 void SpecificWorker::compute()
 {
-    if(startbutton){
-	const float threshold = 400; //millimeters
-	const int velmax=350;	//velocidad maxima del robot
-	const int cota=16;  //cota de vision
-	const float velmaxg=2.2;
-	const int distsecurity=440;
-	int sentido=M_PI-0.6;
-	try
-	{
-	    RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();  //read laser data
-	    if((ldata.data()+cota)->dist<distsecurity&&((ldata.data())+100-cota)->dist<distsecurity){
-	      writeinfo("¡¡¡Esquina!!!");
-	      differentialrobot_proxy->setSpeedBase(-400, 0); 
-	      usleep(1000000);
-	      RoboCompLaser::TLaserData ldata2 = laser_proxy->getLaserData();  //read laser data
-	      if(ldata2.data()->dist>(ldata2.data()+99)->dist)
-		sentido=-sentido;
-	      differentialrobot_proxy->setSpeedBase(0, (sentido));
-	      usleep(1000000);
-	      giro=false;
-	    }
-	    else{
-		  std::sort( ldata.begin()+cota, ldata.end()-cota, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return (a.dist < b.dist); }) ;  //sort laser data from small to $
-		  
-		  float distaux=(ldata.data()+cota)->dist;
-		  float angle=(ldata.data()+cota)->angle;
-		  
-		  int distmax=getdistmin(threshold,angle);
-		  rot=getvelocidadg(velmaxg,angle,distmax,distaux);
-		  int vel=getvelocidadl(distmax,velmax,distaux);
-		  if(rot<0)
-			giro=false;
-		  if((ldata.data()+cota)->dist<distmax)
-			differentialrobot_proxy->setSpeedBase(vel, rot);
-		  else{
-		      cont++;
-		      if (cont==200){
-			  rot=rand()%100 -6;
-			  differentialrobot_proxy->setSpeedBase(vel, rot/10);
-			  usleep(rand()%(250000));
-			  cont=0;
-		      }
-		      else
-			differentialrobot_proxy->setSpeedBase(vel, 0);
-			
-		  }
-		  writeinfo("Velocidad lineal = "+to_string(vel));
-		  writeinfo("Velocidad de rotacion = "+to_string(rot));
-	    }
-	TBaseState state;
-	differentialrobot_proxy->getBaseState(state);
-	
-	scene->addRect(state.z/10,state.x/10,40,40,QPen(Qt::black),QBrush(Qt::black));
+	if(startbutton){
+		const float threshold = 400; //millimeters
+		const int velmax=350;	//velocidad maxima del robot
+		const int cota=16;  //cota de vision
+		const float velmaxg=2.2;
+		const int distsecurity=440;
+		int sentido=M_PI-0.6;
+		try{
+			RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();  //read laser data
+/*=================================DETECTA LAS ESQUINAS===================================*/
+			if((ldata.data()+cota)->dist<distsecurity&&((ldata.data())+100-cota)->dist<distsecurity){
+				writeinfo("¡¡¡Esquina!!!");
+				differentialrobot_proxy->setSpeedBase(-400, 0); 				// DA MARCHA ATRAS
+				usleep(1000000);
+				RoboCompLaser::TLaserData ldata2 = laser_proxy->getLaserData();  //read laser data
+				if(ldata2.data()->dist>(ldata2.data()+99)->dist)
+				sentido=-sentido;
+				differentialrobot_proxy->setSpeedBase(0, (sentido));			//GIRA SOBRE SÍ MISMO
+				usleep(1000000);
+				giro=false;
+			}
+/*========================================================================================*/
+/*==================================SI NO ES UNA ESQUINA==================================*/
+			else{
+				std::sort( ldata.begin()+cota, ldata.end()-cota, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return (a.dist < b.dist); }) ;  //sort laser data from small to $
+				float distaux=(ldata.data()+cota)->dist;			//DISTANCIA MINIMA A LA PARED
+				float angle=(ldata.data()+cota)->angle;				//ANGULO AL QUE SE ENCUENTRA LA DISTANCIA MINIMA
+
+				int distmax=getdistmin(threshold,angle);			//CALCULA LA DISTANCIA A LA QUE DEBE DE GIRAR
+				rot=getvelocidadg(velmaxg,angle,distmax,distaux);		//CALCULA EL ANGULO DE GIRO
+				int vel=getvelocidadl(distmax,velmax,distaux);			//CALCULA LA VELOCIDAD LINEAL
+
+				if(rot<0)
+					giro=false;						//CONTROL DEL SENTIDO DE GIRO
+
+				if((ldata.data()+cota)->dist<distmax)
+					differentialrobot_proxy->setSpeedBase(vel, rot);	//ESTABLECE LA VELOCIDAD Y LA ROTACION SI SE INCUMPLE LA DISTANCIA
+/*===========================GIRA CUANDO ESTA EN UNA DISTANCIA DE SEGURIDAD===============================*/
+				else{
+					cont++;
+					if (cont==200){
+						rot=rand()%100 -6;
+						differentialrobot_proxy->setSpeedBase(vel, rot/10);
+						usleep(rand()%(250000));
+						cont=0;
+					}
+				else
+				differentialrobot_proxy->setSpeedBase(vel, 0);
+
+				}
+/*=====================INFORMACION EN EL QTEXTEDIT====================*/
+				writeinfo("Velocidad lineal = "+to_string(vel));
+				writeinfo("Velocidad de rotacion = "+to_string(rot));
+/*====================================================================*/
+			}
+/*=============DIBUJO PASO DEL ROBOT QTGRAFICSVIEW====================*/
+		TBaseState state;
+		differentialrobot_proxy->getBaseState(state);	
+		scene->addRect(state.x/10,-state.z/10,40,40,QPen(Qt::black),QBrush(Qt::black));
+/*====================================================================*/
+		}
+		catch(const Ice::Exception &ex){
+			writeinfo("ex");
+		}
+    }
+}
+void SpecificWorker::reloj(){
+	static int seg=1;
+	static int min=1;
+	static int hor=1;
+	if(startbutton){
+		if(seg<60){
+			LCDseg->display(seg++);
+		}
+		else if(seg==60&&min<60){
+			seg=1;
+			LCDseg->display(seg);
+			LCDmin->display(min++);
+		}
+		else {
+			seg=1;
+			min=1;
+			LCDseg->display(seg);
+			LCDmin->display(min);
+			LCDhor->display(hor++);
+		}
 	}
-	catch(const Ice::Exception &ex)
-	{
-	    writeinfo("ex");
-	}
-    }
-}
-void SpecificWorker::reloj()
-{
-  static int seg=1;
-  static int min=1;
-  static int hor=1;
-  if(startbutton){
-    if(seg<60){
-      LCDseg->display(seg++);
-    }
-    else if(seg==60&&min<60){
-      seg=0;
-      LCDseg->display(seg);
-      LCDmin->display(min++);
-    }
-    else {
-      seg=0;
-      min=0;
-      LCDseg->display(seg);
-      LCDmin->display(min);
-      LCDhor->display(hor++);
-      
-    }
-  }
 }
 
-void SpecificWorker::iniciar()
-{
-    startbutton=true;
+void SpecificWorker::iniciar(){
+	startbutton=true;
 }
-void SpecificWorker::parar()
-{
-    startbutton=false;
-    differentialrobot_proxy->setSpeedBase(0, 0);
+void SpecificWorker::parar(){
+	startbutton=false;
+	differentialrobot_proxy->setSpeedBase(0, 0);
 }
-void SpecificWorker::writeinfo(string _info)
-{	
-    QString *text=new QString(_info.c_str());
-    InfoText->append(*text);
-    
+void SpecificWorker::writeinfo(string _info){
+	QString *text=new QString(_info.c_str());
+	InfoText->append(*text);
 }
-
-
-
