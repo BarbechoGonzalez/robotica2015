@@ -55,21 +55,21 @@ include src/CMakeFiles/controller.dir/flags.make
 src/CommonBehavior.cpp: /opt/robocomp/interfaces/CommonBehavior.ice
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating CommonBehavior.cpp and CommonBehavior.h from CommonBehavior.ice"
-	cd /home/ivan/robocomp/components/g1/controller/src && slice2cpp -I/home/ivan/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
+	cd /home/ivan/robocomp/components/g1/controller/src && slice2cpp -I/opt/robocomp///interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
 
 src/CommonBehavior.h: src/CommonBehavior.cpp
 
 src/DifferentialRobot.cpp: /opt/robocomp/interfaces/DifferentialRobot.ice
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating DifferentialRobot.cpp and DifferentialRobot.h from DifferentialRobot.ice"
-	cd /home/ivan/robocomp/components/g1/controller/src && slice2cpp -I/home/ivan/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
+	cd /home/ivan/robocomp/components/g1/controller/src && slice2cpp -I/opt/robocomp///interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
 
 src/DifferentialRobot.h: src/DifferentialRobot.cpp
 
 src/Laser.cpp: /opt/robocomp/interfaces/Laser.ice
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Laser.cpp and Laser.h from Laser.ice"
-	cd /home/ivan/robocomp/components/g1/controller/src && slice2cpp -I/home/ivan/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Laser.ice --output-dir .
+	cd /home/ivan/robocomp/components/g1/controller/src && slice2cpp -I/opt/robocomp///interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Laser.ice --output-dir .
 
 src/Laser.h: src/Laser.cpp
 
@@ -83,29 +83,34 @@ src/moc_specificmonitor.cxx: src/specificmonitor.h
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_specificmonitor.cxx"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/ivan/robocomp/components/g1/controller/src/moc_specificmonitor.cxx_parameters
 
-src/moc_genericmonitor.cxx: src/genericmonitor.h
+src/moc_myqtimer.cxx: src/myqtimer.h
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_myqtimer.cxx"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/ivan/robocomp/components/g1/controller/src/moc_myqtimer.cxx_parameters
+
+src/moc_genericmonitor.cxx: src/genericmonitor.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_genericmonitor.cxx"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/ivan/robocomp/components/g1/controller/src/moc_genericmonitor.cxx_parameters
 
 src/moc_commonbehaviorI.cxx: src/commonbehaviorI.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_commonbehaviorI.cxx"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/ivan/robocomp/components/g1/controller/src/moc_commonbehaviorI.cxx_parameters
 
 src/moc_genericworker.cxx: src/genericworker.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_genericworker.cxx"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/lib/x86_64-linux-gnu/qt4/bin/moc @/home/ivan/robocomp/components/g1/controller/src/moc_genericworker.cxx_parameters
 
 src/ui_mainUI.h: src/mainUI.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_mainUI.h"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/lib/x86_64-linux-gnu/qt4/bin/uic -o /home/ivan/robocomp/components/g1/controller/src/ui_mainUI.h /home/ivan/robocomp/components/g1/controller/src/mainUI.ui
 
 src/CMakeFiles/controller.dir/specificworker.cpp.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/specificworker.cpp.o: src/specificworker.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/specificworker.cpp.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/specificworker.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/specificworker.cpp
 
@@ -128,7 +133,7 @@ src/CMakeFiles/controller.dir/specificworker.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/controller.dir/specificmonitor.cpp.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/specificmonitor.cpp.o: src/specificmonitor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/specificmonitor.cpp.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/specificmonitor.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/specificmonitor.cpp
 
@@ -149,55 +154,55 @@ src/CMakeFiles/controller.dir/specificmonitor.cpp.o.provides: src/CMakeFiles/con
 
 src/CMakeFiles/controller.dir/specificmonitor.cpp.o.provides.build: src/CMakeFiles/controller.dir/specificmonitor.cpp.o
 
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/controller.dir/flags.make
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o: /home/ivan/robocomp/classes/rapplication/rapplication.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_12)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o"
-	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o -c /home/ivan/robocomp/classes/rapplication/rapplication.cpp
-
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.i"
-	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ivan/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.i
-
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.s"
-	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ivan/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.s
-
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o.requires:
-.PHONY : src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o.requires
-
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o.provides: src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/controller.dir/build.make src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o.provides.build
-.PHONY : src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o.provides
-
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o.provides.build: src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o
-
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/controller.dir/flags.make
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o: /home/ivan/robocomp/classes/qlog/qlog.cpp
+src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/controller.dir/flags.make
+src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o: /opt/robocomp/classes/rapplication/rapplication.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_13)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o"
-	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o -c /home/ivan/robocomp/classes/qlog/qlog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o -c /opt/robocomp/classes/rapplication/rapplication.cpp
 
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.i"
-	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ivan/robocomp/classes/qlog/qlog.cpp > CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.i
+src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.i"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /opt/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.i
 
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.s"
-	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ivan/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.s
+src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.s"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /opt/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.s
 
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o.requires:
-.PHONY : src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o.requires
+src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o.requires:
+.PHONY : src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o.requires
 
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o.provides: src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/controller.dir/build.make src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o.provides.build
-.PHONY : src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o.provides
+src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o.provides: src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/controller.dir/build.make src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o.provides.build
+.PHONY : src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o.provides
 
-src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o.provides.build: src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o
+src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o.provides.build: src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o
+
+src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/controller.dir/flags.make
+src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o: /opt/robocomp/classes/qlog/qlog.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_14)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o -c /opt/robocomp/classes/qlog/qlog.cpp
+
+src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.i"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /opt/robocomp/classes/qlog/qlog.cpp > CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.i
+
+src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.s"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /opt/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.s
+
+src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o.requires:
+.PHONY : src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o.requires
+
+src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o.provides: src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/controller.dir/build.make src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o.provides.build
+.PHONY : src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o.provides
+
+src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o.provides.build: src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o
 
 src/CMakeFiles/controller.dir/main.cpp.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/main.cpp.o: src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/main.cpp.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/main.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/main.cpp
 
@@ -218,9 +223,32 @@ src/CMakeFiles/controller.dir/main.cpp.o.provides: src/CMakeFiles/controller.dir
 
 src/CMakeFiles/controller.dir/main.cpp.o.provides.build: src/CMakeFiles/controller.dir/main.cpp.o
 
+src/CMakeFiles/controller.dir/myqtimer.cpp.o: src/CMakeFiles/controller.dir/flags.make
+src/CMakeFiles/controller.dir/myqtimer.cpp.o: src/myqtimer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_16)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/myqtimer.cpp.o"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/myqtimer.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/myqtimer.cpp
+
+src/CMakeFiles/controller.dir/myqtimer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller.dir/myqtimer.cpp.i"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ivan/robocomp/components/g1/controller/src/myqtimer.cpp > CMakeFiles/controller.dir/myqtimer.cpp.i
+
+src/CMakeFiles/controller.dir/myqtimer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller.dir/myqtimer.cpp.s"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ivan/robocomp/components/g1/controller/src/myqtimer.cpp -o CMakeFiles/controller.dir/myqtimer.cpp.s
+
+src/CMakeFiles/controller.dir/myqtimer.cpp.o.requires:
+.PHONY : src/CMakeFiles/controller.dir/myqtimer.cpp.o.requires
+
+src/CMakeFiles/controller.dir/myqtimer.cpp.o.provides: src/CMakeFiles/controller.dir/myqtimer.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/controller.dir/build.make src/CMakeFiles/controller.dir/myqtimer.cpp.o.provides.build
+.PHONY : src/CMakeFiles/controller.dir/myqtimer.cpp.o.provides
+
+src/CMakeFiles/controller.dir/myqtimer.cpp.o.provides.build: src/CMakeFiles/controller.dir/myqtimer.cpp.o
+
 src/CMakeFiles/controller.dir/genericmonitor.cpp.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/genericmonitor.cpp.o: src/genericmonitor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/genericmonitor.cpp.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/genericmonitor.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/genericmonitor.cpp
 
@@ -243,7 +271,7 @@ src/CMakeFiles/controller.dir/genericmonitor.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/controller.dir/commonbehaviorI.cpp.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/commonbehaviorI.cpp.o: src/commonbehaviorI.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/commonbehaviorI.cpp.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/commonbehaviorI.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/commonbehaviorI.cpp
 
@@ -266,7 +294,7 @@ src/CMakeFiles/controller.dir/commonbehaviorI.cpp.o.provides.build: src/CMakeFil
 
 src/CMakeFiles/controller.dir/genericworker.cpp.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/genericworker.cpp.o: src/genericworker.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/genericworker.cpp.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/genericworker.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/genericworker.cpp
 
@@ -289,7 +317,7 @@ src/CMakeFiles/controller.dir/genericworker.cpp.o.provides.build: src/CMakeFiles
 
 src/CMakeFiles/controller.dir/CommonBehavior.cpp.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/CommonBehavior.cpp.o: src/CommonBehavior.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/CommonBehavior.cpp.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/CommonBehavior.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/CommonBehavior.cpp
 
@@ -312,7 +340,7 @@ src/CMakeFiles/controller.dir/CommonBehavior.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/controller.dir/DifferentialRobot.cpp.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/DifferentialRobot.cpp.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/DifferentialRobot.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/DifferentialRobot.cpp
 
@@ -335,7 +363,7 @@ src/CMakeFiles/controller.dir/DifferentialRobot.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/controller.dir/Laser.cpp.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/Laser.cpp.o: src/Laser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/Laser.cpp.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/Laser.cpp.o -c /home/ivan/robocomp/components/g1/controller/src/Laser.cpp
 
@@ -358,7 +386,7 @@ src/CMakeFiles/controller.dir/Laser.cpp.o.provides.build: src/CMakeFiles/control
 
 src/CMakeFiles/controller.dir/moc_specificworker.cxx.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/moc_specificworker.cxx.o: src/moc_specificworker.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_21)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/moc_specificworker.cxx.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/moc_specificworker.cxx.o -c /home/ivan/robocomp/components/g1/controller/src/moc_specificworker.cxx
 
@@ -381,7 +409,7 @@ src/CMakeFiles/controller.dir/moc_specificworker.cxx.o.provides.build: src/CMake
 
 src/CMakeFiles/controller.dir/moc_specificmonitor.cxx.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/moc_specificmonitor.cxx.o: src/moc_specificmonitor.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_22)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/moc_specificmonitor.cxx.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/moc_specificmonitor.cxx.o -c /home/ivan/robocomp/components/g1/controller/src/moc_specificmonitor.cxx
 
@@ -402,9 +430,32 @@ src/CMakeFiles/controller.dir/moc_specificmonitor.cxx.o.provides: src/CMakeFiles
 
 src/CMakeFiles/controller.dir/moc_specificmonitor.cxx.o.provides.build: src/CMakeFiles/controller.dir/moc_specificmonitor.cxx.o
 
+src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o: src/CMakeFiles/controller.dir/flags.make
+src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o: src/moc_myqtimer.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_25)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/moc_myqtimer.cxx.o -c /home/ivan/robocomp/components/g1/controller/src/moc_myqtimer.cxx
+
+src/CMakeFiles/controller.dir/moc_myqtimer.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller.dir/moc_myqtimer.cxx.i"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ivan/robocomp/components/g1/controller/src/moc_myqtimer.cxx > CMakeFiles/controller.dir/moc_myqtimer.cxx.i
+
+src/CMakeFiles/controller.dir/moc_myqtimer.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller.dir/moc_myqtimer.cxx.s"
+	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ivan/robocomp/components/g1/controller/src/moc_myqtimer.cxx -o CMakeFiles/controller.dir/moc_myqtimer.cxx.s
+
+src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o.requires:
+.PHONY : src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o.requires
+
+src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o.provides: src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o.requires
+	$(MAKE) -f src/CMakeFiles/controller.dir/build.make src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o.provides.build
+.PHONY : src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o.provides
+
+src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o.provides.build: src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o
+
 src/CMakeFiles/controller.dir/moc_genericmonitor.cxx.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/moc_genericmonitor.cxx.o: src/moc_genericmonitor.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_23)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/moc_genericmonitor.cxx.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/moc_genericmonitor.cxx.o -c /home/ivan/robocomp/components/g1/controller/src/moc_genericmonitor.cxx
 
@@ -427,7 +478,7 @@ src/CMakeFiles/controller.dir/moc_genericmonitor.cxx.o.provides.build: src/CMake
 
 src/CMakeFiles/controller.dir/moc_commonbehaviorI.cxx.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/moc_commonbehaviorI.cxx.o: src/moc_commonbehaviorI.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_24)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/moc_commonbehaviorI.cxx.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/moc_commonbehaviorI.cxx.o -c /home/ivan/robocomp/components/g1/controller/src/moc_commonbehaviorI.cxx
 
@@ -450,7 +501,7 @@ src/CMakeFiles/controller.dir/moc_commonbehaviorI.cxx.o.provides.build: src/CMak
 
 src/CMakeFiles/controller.dir/moc_genericworker.cxx.o: src/CMakeFiles/controller.dir/flags.make
 src/CMakeFiles/controller.dir/moc_genericworker.cxx.o: src/moc_genericworker.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_25)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ivan/robocomp/components/g1/controller/CMakeFiles $(CMAKE_PROGRESS_28)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/controller.dir/moc_genericworker.cxx.o"
 	cd /home/ivan/robocomp/components/g1/controller/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/controller.dir/moc_genericworker.cxx.o -c /home/ivan/robocomp/components/g1/controller/src/moc_genericworker.cxx
 
@@ -475,9 +526,10 @@ src/CMakeFiles/controller.dir/moc_genericworker.cxx.o.provides.build: src/CMakeF
 controller_OBJECTS = \
 "CMakeFiles/controller.dir/specificworker.cpp.o" \
 "CMakeFiles/controller.dir/specificmonitor.cpp.o" \
-"CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o" \
-"CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o" \
+"CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o" \
+"CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o" \
 "CMakeFiles/controller.dir/main.cpp.o" \
+"CMakeFiles/controller.dir/myqtimer.cpp.o" \
 "CMakeFiles/controller.dir/genericmonitor.cpp.o" \
 "CMakeFiles/controller.dir/commonbehaviorI.cpp.o" \
 "CMakeFiles/controller.dir/genericworker.cpp.o" \
@@ -486,6 +538,7 @@ controller_OBJECTS = \
 "CMakeFiles/controller.dir/Laser.cpp.o" \
 "CMakeFiles/controller.dir/moc_specificworker.cxx.o" \
 "CMakeFiles/controller.dir/moc_specificmonitor.cxx.o" \
+"CMakeFiles/controller.dir/moc_myqtimer.cxx.o" \
 "CMakeFiles/controller.dir/moc_genericmonitor.cxx.o" \
 "CMakeFiles/controller.dir/moc_commonbehaviorI.cxx.o" \
 "CMakeFiles/controller.dir/moc_genericworker.cxx.o"
@@ -495,9 +548,10 @@ controller_EXTERNAL_OBJECTS =
 
 bin/controller: src/CMakeFiles/controller.dir/specificworker.cpp.o
 bin/controller: src/CMakeFiles/controller.dir/specificmonitor.cpp.o
-bin/controller: src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o
-bin/controller: src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o
+bin/controller: src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o
+bin/controller: src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o
 bin/controller: src/CMakeFiles/controller.dir/main.cpp.o
+bin/controller: src/CMakeFiles/controller.dir/myqtimer.cpp.o
 bin/controller: src/CMakeFiles/controller.dir/genericmonitor.cpp.o
 bin/controller: src/CMakeFiles/controller.dir/commonbehaviorI.cpp.o
 bin/controller: src/CMakeFiles/controller.dir/genericworker.cpp.o
@@ -506,6 +560,7 @@ bin/controller: src/CMakeFiles/controller.dir/DifferentialRobot.cpp.o
 bin/controller: src/CMakeFiles/controller.dir/Laser.cpp.o
 bin/controller: src/CMakeFiles/controller.dir/moc_specificworker.cxx.o
 bin/controller: src/CMakeFiles/controller.dir/moc_specificmonitor.cxx.o
+bin/controller: src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o
 bin/controller: src/CMakeFiles/controller.dir/moc_genericmonitor.cxx.o
 bin/controller: src/CMakeFiles/controller.dir/moc_commonbehaviorI.cxx.o
 bin/controller: src/CMakeFiles/controller.dir/moc_genericworker.cxx.o
@@ -528,9 +583,10 @@ src/CMakeFiles/controller.dir/build: bin/controller
 
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/specificworker.cpp.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/specificmonitor.cpp.o.requires
-src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/rapplication/rapplication.cpp.o.requires
-src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/home/ivan/robocomp/classes/qlog/qlog.cpp.o.requires
+src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o.requires
+src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/opt/robocomp/classes/qlog/qlog.cpp.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/main.cpp.o.requires
+src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/myqtimer.cpp.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/genericmonitor.cpp.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/commonbehaviorI.cpp.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/genericworker.cpp.o.requires
@@ -539,6 +595,7 @@ src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/Differenti
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/Laser.cpp.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/moc_specificworker.cxx.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/moc_specificmonitor.cxx.o.requires
+src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/moc_myqtimer.cxx.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/moc_genericmonitor.cxx.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/moc_commonbehaviorI.cxx.o.requires
 src/CMakeFiles/controller.dir/requires: src/CMakeFiles/controller.dir/moc_genericworker.cxx.o.requires
@@ -556,6 +613,7 @@ src/CMakeFiles/controller.dir/depend: src/Laser.cpp
 src/CMakeFiles/controller.dir/depend: src/Laser.h
 src/CMakeFiles/controller.dir/depend: src/moc_specificworker.cxx
 src/CMakeFiles/controller.dir/depend: src/moc_specificmonitor.cxx
+src/CMakeFiles/controller.dir/depend: src/moc_myqtimer.cxx
 src/CMakeFiles/controller.dir/depend: src/moc_genericmonitor.cxx
 src/CMakeFiles/controller.dir/depend: src/moc_commonbehaviorI.cxx
 src/CMakeFiles/controller.dir/depend: src/moc_genericworker.cxx

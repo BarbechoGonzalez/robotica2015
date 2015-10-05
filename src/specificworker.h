@@ -33,25 +33,36 @@
 
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
+#include <myqtimer.h>
+
 const double EulerC=std::exp(1.0);
 class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
 bool giro;
-bool derecha;
 float rot;
+bool startbutton;
+QGraphicsScene *scene;
+int cont;
+
 
 public:
 	SpecificWorker(MapPrx& mprx);	
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 public slots:
-	void compute(); 	
+	void compute();
+	void iniciar();
+	void parar();
+	void reloj();
 
 private:
+  
+  MyQTimer clk;
 	int getdistmin(int dismax, float angle);
 	int getvelocidadl(float distmin,int velomax, float dist);
 	float getvelocidadg(float velmaxg, float angle, int dismax, int dis);
+	void writeinfo(string _info);
 	
 };
 

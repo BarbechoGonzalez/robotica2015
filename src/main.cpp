@@ -78,7 +78,6 @@
 #include "specificmonitor.h"
 #include "commonbehaviorI.h"
 
-
 #include <DifferentialRobot.h>
 #include <Laser.h>
 

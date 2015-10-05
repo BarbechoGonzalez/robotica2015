@@ -21,6 +21,7 @@ SET ( SOURCES
   $ENV{ROBOCOMP}/classes/rapplication/rapplication.cpp
   $ENV{ROBOCOMP}/classes/qlog/qlog.cpp
   main.cpp
+  myqtimer.cpp
   genericmonitor.cpp
   specificmonitor.cpp
   commonbehaviorI.cpp
@@ -31,6 +32,7 @@ SET ( SOURCES
 # Headers set
 SET ( HEADERS
   ${HEADERS}
+  myqtimer.h
   genericmonitor.h
   specificmonitor.h
   commonbehaviorI.h
